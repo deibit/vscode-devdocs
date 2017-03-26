@@ -15,7 +15,7 @@ function activate(context) {
             return; // No open text editor
         }
 
-        var url = "http://devdocs.io/#q=";
+        var url = "https://devdocs.io/#q=";
         var language = editor.document.languageId;
         var selection = editor.selection;
         var text = editor.document.getText(selection);
