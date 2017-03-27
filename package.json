@@ -17,14 +17,21 @@
     "contributes": {
         "commands": [{
             "command": "extension.devDocs",
-            "title": "devdocs"
+            "title": "Search in devDocs.io"
         }],
+        "menus": {
+            "editor/context": [{
+                "when": "editorHasSelection",
+                "command": "extension.devDocs",
+                "group": "0_externalSearch@1"
+            }]
+        },
         "keybindings": [{
-        "command": "extension.devDocs",
-        "key": "ctrl+f1",
-        "mac": "cmd+f1",
-        "when": "editorTextFocus"
-    }]
+            "command": "extension.devDocs",
+            "key": "ctrl+f1",
+            "mac": "cmd+f1",
+            "when": "editorTextFocus"
+        }]
     },
     "scripts": {
         "postinstall": "node ./node_modules/vscode/bin/install",
