@@ -4,8 +4,7 @@ Simple [Visual Studio Code](https://code.visualstudio.com/) extension for easy s
 
 ## Features
 
-Search the selected text in devdocs.io. Language awereness is picked from your
-current file.
+Search the selected text in devdocs.io. Development language search is obtained from the current active file. Predefined shortcut is ctrl+F1 or cmd+F1 on Mac. Also a convenient 'devDocs' command could be used via command palette.
 
 ## Requirements
 
@@ -17,9 +16,9 @@ Nothing.
 
 ## Known Issues
 
-The predefine shortcut is ctrl+F1 or cmd+F1 if you are on a Mac. Nevertheless
-a command 'devDocs' will work via command palette.
+Nothing.
 
 ## Release Notes
 
+0.0.2 Context menu support.
 0.0.1 Initial and early release.

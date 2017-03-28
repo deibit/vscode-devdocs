@@ -15,11 +15,18 @@ function activate(context) {
             return; // No open text editor
         }
 
-        var url = "https://devdocs.io/#q=";
+        var url = 'https://devdocs.io/';
         var language = editor.document.languageId;
         var selection = editor.selection;
         var text = editor.document.getText(selection);
-        vscode.commands.executeCommand('vscode.open', vscode.Uri.parse(url + language + " " + text));
+
+        if (text.length == 0) return;
+        if (text.indexOf('\n') >= 0) {
+          vscode.window.showErrorMessage('Multiline selection not allowed for your security.');
+          return;
+        }
+
+        vscode.commands.executeCommand('vscode.open', vscode.Uri.parse(url + language + "#q=" + text),1 );
     });
 
     context.subscriptions.push(disposable);
