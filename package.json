@@ -2,36 +2,46 @@
     "name": "devdocs",
     "displayName": "devdocs",
     "description": "Allow VSCode to search devdocs.io documentation",
-    "version": "0.0.1",
+    "version": "0.0.3",
     "publisher": "deibit",
     "engines": {
         "vscode": "^1.10.0"
     },
+    "author": {
+        "name": "David Garcia"
+    },
     "categories": [
         "Other"
     ],
+    "icon": "images/icon.png",
     "activationEvents": [
         "onCommand:extension.devDocs"
     ],
     "main": "./extension",
     "contributes": {
-        "commands": [{
-            "command": "extension.devDocs",
-            "title": "Search in devDocs.io"
-        }],
-        "menus": {
-            "editor/context": [{
-                "when": "editorHasSelection",
+        "commands": [
+            {
                 "command": "extension.devDocs",
-                "group": "0_externalSearch@1"
-            }]
+                "title": "Search in devDocs.io"
+            }
+        ],
+        "menus": {
+            "editor/context": [
+                {
+                    "when": "editorHasSelection",
+                    "command": "extension.devDocs",
+                    "group": "0_externalSearch@1"
+                }
+            ]
         },
-        "keybindings": [{
-            "command": "extension.devDocs",
-            "key": "ctrl+f1",
-            "mac": "cmd+f1",
-            "when": "editorTextFocus"
-        }]
+        "keybindings": [
+            {
+                "command": "extension.devDocs",
+                "key": "ctrl+f1",
+                "mac": "cmd+f1",
+                "when": "editorTextFocus"
+            }
+        ]
     },
     "scripts": {
         "postinstall": "node ./node_modules/vscode/bin/install",

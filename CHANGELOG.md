@@ -1,7 +1,12 @@
-# Change Log
-All notable changes to the "devdocs" extension will be documented in this file.
+## [0.0.3]
+- Fixed query string
+- Update docs
+- Added an icon
 
-Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
+## [0.0.2]
+- Added context menu action
+- Added https
+- Changed command palette message
 
-## [Unreleased]
+## [0.0.1]
 - Initial release

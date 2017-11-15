@@ -16,7 +16,10 @@ function activate(context) {
         }
 
         var url = 'https://devdocs.io/';
-        var language = editor.document.languageId;
+        var language = editor.document.languageId
+        if (language == "python") {
+            language = "python3.6";
+        }
         var selection = editor.selection;
         var text = editor.document.getText(selection);
 
@@ -26,7 +29,7 @@ function activate(context) {
           return;
         }
 
-        vscode.commands.executeCommand('vscode.open', vscode.Uri.parse(url + "#q=" + language + " " + text), 1);
+        vscode.commands.executeCommand('vscode.open', vscode.Uri.parse(url + "#q=" + language + "%20" + text), 1);
     });
 
     context.subscriptions.push(disposable);
