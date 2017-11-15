@@ -26,7 +26,7 @@ function activate(context) {
           return;
         }
 
-        vscode.commands.executeCommand('vscode.open', vscode.Uri.parse(url + language + "#q=" + text),1 );
+        vscode.commands.executeCommand('vscode.open', vscode.Uri.parse(url + "#q=" + language + " " + text), 1);
     });
 
     context.subscriptions.push(disposable);
