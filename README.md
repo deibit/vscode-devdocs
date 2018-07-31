@@ -20,6 +20,8 @@ Nothing.
 
 ## Release Notes
 
+0.0.4 Fixed URI construction, added search word under cursor.
+
 0.0.3 Fixed new format query string, added an icon.
 
 0.0.2 Context menu support
