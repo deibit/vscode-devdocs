@@ -1,3 +1,7 @@
+## [0.0.4]
+- Fixed URI construction
+- Added search word under cursor (selection is optional)
+
 ## [0.0.3]
 - Fixed query string
 - Update docs

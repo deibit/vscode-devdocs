@@ -28,7 +28,6 @@
         "menus": {
             "editor/context": [
                 {
-                    "when": "editorHasSelection",
                     "command": "extension.devDocs",
                     "group": "0_externalSearch@1"
                 }

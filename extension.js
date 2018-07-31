@@ -10,27 +10,43 @@ function activate(context) {
     // The commandId parameter must match the command field in package.json
     var disposable = vscode.commands.registerCommand('extension.devDocs', function () {
         // The code you place here will be executed every time your command is executed
-        var editor = vscode.window.activeTextEditor;
+        const editor = vscode.window.activeTextEditor;
         if (!editor) {
             return; // No open text editor
         }
 
-        var url = 'https://devdocs.io/';
-        var language = editor.document.languageId
+        const url = 'https://devdocs.io/';
+        let language = editor.document.languageId
         if (language == "python") {
             language = "python3.6";
         }
-        var selection = editor.selection;
-        var text = editor.document.getText(selection);
+        
+        let text = "";
 
-        if (text.length == 0) return;
+        // First, selection for afine search, them, word under cursor.
+        var selection = editor.selection;
+        if (!selection.isEmpty) {
+            text = editor.document.getText(selection);
+        } else {
+            const position = editor.selection.active;
+            const range = editor.document.getWordRangeAtPosition(position);
+            text = editor.document.getText(range);
+        }
+
+        // Safety checks
+        if (text.length == 0) {
+            vscode.window.showErrorMessage('Null string in text variable.');
+            return;
+        }
         if (text.indexOf('\n') >= 0) {
           vscode.window.showErrorMessage('Multiline selection not allowed for your security.');
           return;
         }
 
-        vscode.commands.executeCommand('vscode.open', vscode.Uri.parse(url + "#q=" + language + "%20" + text), 1);
-    });
+        // Open URI
+        let uri = vscode.Uri.parse(url + "#q=" + language + "%20" + text);
+        vscode.commands.executeCommand('vscode.open', uri);
+   });
 
     context.subscriptions.push(disposable);
 }
