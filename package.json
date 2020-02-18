@@ -2,7 +2,7 @@
   "name": "devdocs",
   "displayName": "devdocs",
   "description": "Allow VSCode to search devdocs.io documentation",
-  "version": "0.1.5",
+  "version": "0.2.0",
   "publisher": "deibit",
   "engines": {
     "vscode": "^1.10.0"
