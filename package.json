@@ -46,6 +46,10 @@
     "postinstall": "node ./node_modules/vscode/bin/install",
     "test": "node ./node_modules/vscode/bin/test"
   },
+    "repository": {
+    "type": "git",
+    "url": "https://github.com/deibit/vscode-devdocs"
+  },
   "devDependencies": {
     "typescript": "^2.0.3",
     "vscode": "^1.0.0",
