@@ -20,9 +20,9 @@ Nothing.
 
 ## Release Notes
 
-0.1.5 Search without binding to a language. Added new shorcuts.
+0.2.0 Search without binding to a language. Moved keybindings to cmd+k cmd+k (macos) or ctrl+k ctrl+k (non-macos).
 
-0.0.4 Fixed URI construction, added search word under cursor.
+0.1.4 Fixed URI construction, added search word under cursor.
 
 0.0.3 Fixed new format query string, added an icon.
 
