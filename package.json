@@ -1,57 +1,57 @@
 {
-    "name": "devdocs",
-    "displayName": "devdocs",
-    "description": "Allow VSCode to search devdocs.io documentation",
-    "version": "0.1.3",
-    "publisher": "deibit",
-    "engines": {
-        "vscode": "^1.10.0"
-    },
-    "author": {
-        "name": "David Garcia"
-    },
-    "categories": [
-        "Other"
+  "name": "devdocs",
+  "displayName": "devdocs",
+  "description": "Allow VSCode to search devdocs.io documentation",
+  "version": "0.1.5",
+  "publisher": "deibit",
+  "engines": {
+    "vscode": "^1.10.0"
+  },
+  "author": {
+    "name": "David Garcia"
+  },
+  "categories": [
+    "Other"
+  ],
+  "icon": "images/icon.png",
+  "activationEvents": [
+    "onCommand:extension.devDocs"
+  ],
+  "main": "./extension",
+  "contributes": {
+    "commands": [
+      {
+        "command": "extension.devDocs",
+        "title": "Search in devDocs.io"
+      }
     ],
-    "icon": "images/icon.png",
-    "activationEvents": [
-        "onCommand:extension.devDocs"
-    ],
-    "main": "./extension",
-    "contributes": {
-        "commands": [
-            {
-                "command": "extension.devDocs",
-                "title": "Search in devDocs.io"
-            }
-        ],
-        "menus": {
-            "editor/context": [
-                {
-                    "command": "extension.devDocs",
-                    "group": "0_externalSearch@1"
-                }
-            ]
-        },
-        "keybindings": [
-            {
-                "command": "extension.devDocs",
-                "key": "ctrl+f1",
-                "mac": "cmd+f1",
-                "when": "editorTextFocus"
-            }
-        ]
+    "menus": {
+      "editor/context": [
+        {
+          "command": "extension.devDocs",
+          "group": "0_externalSearch@1"
+        }
+      ]
     },
-    "scripts": {
-        "postinstall": "node ./node_modules/vscode/bin/install",
-        "test": "node ./node_modules/vscode/bin/test"
-    },
-    "devDependencies": {
-        "typescript": "^2.0.3",
-        "vscode": "^1.0.0",
-        "mocha": "^2.3.3",
-        "eslint": ">=4.18.2",
-        "@types/node": "^6.0.40",
-        "@types/mocha": "^2.2.32"
-    }
+    "keybindings": [
+      {
+        "command": "extension.devDocs",
+        "key": "ctrl+k ctrl+k",
+        "mac": "cmd+k cmd+k",
+        "when": "editorTextFocus"
+      }
+    ]
+  },
+  "scripts": {
+    "postinstall": "node ./node_modules/vscode/bin/install",
+    "test": "node ./node_modules/vscode/bin/test"
+  },
+  "devDependencies": {
+    "typescript": "^2.0.3",
+    "vscode": "^1.0.0",
+    "mocha": "^2.3.3",
+    "eslint": ">=4.18.2",
+    "@types/node": "^6.0.40",
+    "@types/mocha": "^2.2.32"
+  }
 }
