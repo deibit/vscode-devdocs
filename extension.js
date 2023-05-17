@@ -15,6 +15,7 @@ function activate(context) {
             return; // No open text editor
         }
 
+        const config = vscode.workspace.getConfiguration("devdocs");
         const url = 'https://devdocs.io/';
         let text = "";
 
@@ -23,8 +24,9 @@ function activate(context) {
         if (!selection.isEmpty) {
             text = editor.document.getText(selection);
         } else {
+            const matcher = config.RangeRegex;
             const position = editor.selection.active;
-            const range = editor.document.getWordRangeAtPosition(position);
+            const range = matcher.length == 0 ? editor.document.getWordRangeAtPosition(position) : editor.document.getWordRangeAtPosition(position, new RegExp(matcher, "g"));
             text = editor.document.getText(range);
         }
 
