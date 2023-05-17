@@ -19,6 +19,17 @@
   ],
   "main": "./extension",
   "contributes": {
+    "configuration": {
+      "type": "object",
+      "title": "devdocs",
+      "properties": {
+        "devdocs.LanguageFilter": {
+            "type": "boolean",
+            "default": false,
+            "description": "Filter results by current language."
+        }
+      }
+    },
     "commands": [
       {
         "command": "extension.devDocs",
