@@ -15,6 +15,7 @@ function activate(context) {
             return; // No open text editor
         }
 
+        const config = vscode.workspace.getConfiguration("devdocs");
         const url = 'https://devdocs.io/';
         let text = "";
 
@@ -37,6 +38,9 @@ function activate(context) {
           vscode.window.showErrorMessage('Multiline selection not allowed for your security.');
           return;
         }
+
+        if (config.LanguageFilter)
+            text = editor.document.languageId + " " + text;
 
         // Open URI
         let uri = vscode.Uri.parse(url + "#q=" + text);
