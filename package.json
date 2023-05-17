@@ -19,6 +19,17 @@
   ],
   "main": "./extension",
   "contributes": {
+    "configuration": {
+      "type": "object",
+      "title": "devdocs",
+      "properties": {
+        "devdocs.RangeRegex": {
+            "type": "string",
+            "default": "",
+            "description": "Regular expression to find word bounds."
+        }
+      }
+    },
     "commands": [
       {
         "command": "extension.devDocs",
